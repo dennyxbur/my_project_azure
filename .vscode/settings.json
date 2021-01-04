@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": ".venv/bin/python",
+    "python.jediEnabled": false,
+    "python.analysis.autoSearchPaths": true,
+    "python.terminal.activateEnvironment": false,
+    "python.languageServer": "Pylance",
+    "python.analysis.extraPaths": [".venv/bin/python"]
+}
