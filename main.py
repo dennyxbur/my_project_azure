@@ -12,6 +12,11 @@ def ping():
     return {"message": "PONG!"}
 
 
+@app.get("/pong")
+def pong():
+    return {"message": "PING!"}
+
+
 @app.get("/dow")
 def get_dow():
     now = pendulum.now('UTC')
