@@ -14,7 +14,7 @@ def ping():
 
 @app.get("/pong")
 def pong():
-    return {"message": "PING!"}
+    return {"message": "PING!PING!"}
 
 
 @app.get("/dow")
