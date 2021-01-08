@@ -18,7 +18,7 @@ spec:
         resources:
           limits:
             memory: "128Mi"
-            cpu: "500m"
+            cpu: "258m"
         ports:
         - containerPort: 8000
 ---
@@ -56,32 +56,15 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 6379
-      volumes:
-        - name: redis-volume
-          persistentVolumeClaim:
-            claimName: my-project-vol
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: redis-cache
 spec:
-  type: ClusterIP
   selector:
     app: my-project-app
   ports:
   - name: redis-cache
-    protocol: TCP
     port: 6379
     targetPort: 6379
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: my-project-vol
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi

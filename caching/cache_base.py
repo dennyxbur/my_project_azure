@@ -5,7 +5,7 @@ import redis
 
 class CacheBase(ABC):
     def __init__(self):
-        self.r = redis.Redis(port=6379)
+        self.r = redis.Redis(host='redis-cache', port=6379)
 
     def put(self):
         pass
